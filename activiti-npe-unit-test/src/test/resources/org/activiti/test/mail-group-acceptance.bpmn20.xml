@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/test">
+  <process id="mail-group-acceptance" name="mail-group-acceptance">
+    <documentation>Place documentation for the 'mail-group-acceptance'
+			process here.</documentation>
+    <startEvent id="startevent1" name="Start"></startEvent>
+    <userTask id="GROUP_LEADER_ACCEPT_TASK_ID" name="Acceptance of the group leader"></userTask>
+    <boundaryEvent id="boundarytimer1" name="" cancelActivity="true" attachedToRef="GROUP_LEADER_ACCEPT_TASK_ID">
+      <timerEventDefinition>
+        <timeCycle>0/2 * * * * ?</timeCycle>
+      </timerEventDefinition>
+    </boundaryEvent>
+    <endEvent id="endevent1" name="End"></endEvent>
+    <sequenceFlow id="flow15" name="" sourceRef="startevent1" targetRef="GROUP_LEADER_ACCEPT_TASK_ID"></sequenceFlow>
+    <sequenceFlow id="flow16" name="" sourceRef="boundarytimer1" targetRef="GROUP_LEADER_ACCEPT_TASK_ID"></sequenceFlow>
+    <sequenceFlow id="flow17" name="" sourceRef="GROUP_LEADER_ACCEPT_TASK_ID" targetRef="endevent1"></sequenceFlow>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_mail-group-acceptance">
+    <bpmndi:BPMNPlane bpmnElement="mail-group-acceptance" id="BPMNPlane_mail-group-acceptance">
+      <bpmndi:BPMNShape bpmnElement="startevent1" id="BPMNShape_startevent1">
+        <omgdc:Bounds height="35" width="35" x="300" y="270"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="GROUP_LEADER_ACCEPT_TASK_ID" id="BPMNShape_GROUP_LEADER_ACCEPT_TASK_ID">
+        <omgdc:Bounds height="75" width="105" x="430" y="250"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="boundarytimer1" id="BPMNShape_boundarytimer1">
+        <omgdc:Bounds height="30" width="30" x="480" y="300"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="endevent1" id="BPMNShape_endevent1">
+        <omgdc:Bounds height="35" width="35" x="630" y="270"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="flow15" id="BPMNEdge_flow15">
+        <omgdi:waypoint x="335" y="287"></omgdi:waypoint>
+        <omgdi:waypoint x="430" y="287"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow16" id="BPMNEdge_flow16">
+        <omgdi:waypoint x="495" y="330"></omgdi:waypoint>
+        <omgdi:waypoint x="494" y="412"></omgdi:waypoint>
+        <omgdi:waypoint x="364" y="412"></omgdi:waypoint>
+        <omgdi:waypoint x="482" y="325"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow17" id="BPMNEdge_flow17">
+        <omgdi:waypoint x="535" y="287"></omgdi:waypoint>
+        <omgdi:waypoint x="630" y="287"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>
